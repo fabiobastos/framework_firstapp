@@ -47,3 +47,8 @@ end
 # gem 'debugger', group: [:development, :test]
 gem 'rails_12factor', group: :production
 gem 'pg', group: :production
+
+group :test do
+	gem 'capybara'
+	gem 'rspec-rails'
+end
