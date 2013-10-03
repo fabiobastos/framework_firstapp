@@ -1,0 +1,9 @@
+<h1>
+	Sobre
+</h1>
+
+<p>Essa é uma aplicação Rails 4.0</p>
+
+<%= content_for :sidebar do %>
+	<%= render partial: 'shared/sidebar', locals: { local_name: @name } %>
+<% end %>
