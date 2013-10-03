@@ -1,3 +1,9 @@
 <h1>
-	Hello World!
+	Conteúdo principal
 </h1>
+
+
+
+<%= content_for :sidebar do %>
+	<%= render partial: 'shared/sidebar', locals: { local_name: @name } %>
+<% end %>
