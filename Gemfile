@@ -5,7 +5,7 @@ gem 'rails', '4.0.0'
 
 
 
-	gem 'sqlite3'
+gem 'sqlite3', group: :development
 
 
 # Use SCSS for stylesheets
@@ -46,3 +46,4 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem 'rails_12factor', group: :production
+gem 'pg', group: :production
