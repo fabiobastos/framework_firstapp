@@ -3,7 +3,7 @@ require 'spec_helper'
 describe User do
 
 	it "creates an user" do
-		user = User.new(:name => "Fábio Bastos", :email => "fabiotblima@gmail.com", :age => 29)
+		user = User.new(:name => "Fábio Bastos", :email => "fabiotblima@gmail.com", :age => 29, :gender => User::MALE)
 		user.save.should be_true
 	end
 
@@ -26,5 +26,45 @@ describe User do
 		user = User.new(:name => "Solange", :email => "solange.bastos@gmail.com", :age => 49, :gender => User::FEMALE)
 		user.save.should be_true
 	end
-	
+
+	context "when age >= 18" do
+		it "creates an user with gender value" do
+			user = User.new :name => "Fábio Bastos",
+							:email => 'fabiotblima$gmail',
+							:age => 18,
+							:gender => User::MALE
+					
+			
+			user.save.should be_true
+		end
+
+		it "does not create an user without gender value" do
+			user = User.new :name => "Fábio Bastos",
+							:email => 'fabiotblima$gmail',
+							:age => 18
+								
+			user.save.should be_false
+		end
+
+	end
+
+	context "when age < 18" do
+		it "creates an user with gender value" do
+			user = User.new :name => "Fábio Bastos",
+							:email => 'fabiotblima$gmail',
+							:age => 17,
+							:gender => User::MALE
+					
+			
+			user.save.should be_true
+		end
+
+		it "does not create an user without gender value" do
+			user = User.new :name => "Fábio Bastos",
+							:email => 'fabiotblima$gmail',
+							:age => 17	
+							
+			user.save.should be_true
+		end
+	end	
 end
