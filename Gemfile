@@ -51,4 +51,5 @@ gem 'pg', group: :production
 group :test do
 	gem 'capybara'
 	gem 'rspec-rails'
+	gem 'shoulda'
 end
