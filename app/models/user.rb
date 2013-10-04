@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
 
+	MALE = 1
+	FEMALE = 2
+
 	# Attrs accessible
 	# attr_acessible :name, :email, :age
 
