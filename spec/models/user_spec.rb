@@ -67,4 +67,12 @@ describe User do
 			user.save.should be_true
 		end
 	end	
+
+	it 'does not create users with same email' do
+		User::create(:name => "Fábio Bastos", :email => "fabiotblima@gmail.com", :age => 29, :gender => User::MALE)
+		user = User.new(:name => "Fábio Bastos", :email => "fabiotblima@gmail.com", :age => 29, :gender => User::MALE)
+		user.save.should be_false
+	end
+
+
 end
