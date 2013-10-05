@@ -2,6 +2,10 @@
 	Hello World!
 </h1>
 
+<% label = "<i class='icon-user'></i> Listar Usuários".html_safe %>
+
+<%= link_to label, users_path, :class => "btn btn-large" %>
+
 
 
 <%= content_for :sidebar do %>

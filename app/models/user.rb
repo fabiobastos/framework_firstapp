@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 
+	# attr
+
 	MALE = 1
 	FEMALE = 2
 	OTHER = 3
@@ -18,7 +20,7 @@ class User < ActiveRecord::Base
 
 	# Public methods
 	def adulthood
-		self.age >= 18
+		self.age.present? and self.age >= 18
 	end
 
 end
