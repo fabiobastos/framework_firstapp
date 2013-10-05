@@ -14,7 +14,9 @@ class User < ActiveRecord::Base
 	validates :email, :presence => true, :allow_blank => false
 	validates :gender, :presence => true, :if => :adulthood
 	validates :email, :uniqueness => true
+	
 	# Associations
+	has_many :bills, :dependent => :destroy
 
 	# Scopes
 
